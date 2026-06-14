@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prosper Platform for Healers</title>
+  <meta name="description" content="Everything you need to run your healing practice — bookings, retreats, virtual sessions, email, and your own website — in one platform. Your data. Your terms." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8cf88;
+      --deep: #0a0c14;
+      --deep2: #10131f;
+      --text: #e8e4dc;
+      --muted: #9a968f;
+      --border: rgba(201, 168, 76, 0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--deep);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(10, 12, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--text); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-cta {
+      padding: 0.55rem 1.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--deep);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(201,168,76,0.07) 0%, transparent 65%),
+                  radial-gradient(ellipse at 20% 80%, rgba(100,80,160,0.08) 0%, transparent 55%);
+      background-color: var(--deep);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,12,20,0.2) 0%,
+        rgba(10,12,20,0.0) 40%,
+        rgba(10,12,20,0.7) 85%,
+        rgba(10,12,20,1) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 820px;
+      padding: 2rem;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(232, 228, 220, 0.75);
+      line-height: 1.85;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      background: var(--gold);
+      color: var(--deep);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--deep);
+    }
+
+    /* DIVIDER */
+    .divider {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      margin: 0 auto;
+    }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(232, 228, 220, 0.75);
+      max-width: 620px;
+    }
+
+    /* INTRO / PROMISE */
+    .promise { background: var(--deep2); }
+
+    .promise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .promise-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--gold-light);
+      border-left: 1px solid var(--gold);
+      padding-left: 2rem;
+    }
+
+    /* FOR WHO */
+    .for-who { background: var(--deep); }
+
+    .practitioners-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin-top: 3.5rem;
+    }
+
+    .practitioner {
+      padding: 1.75rem 1.25rem;
+      border: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      transition: border-color 0.25s;
+    }
+
+    .practitioner::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 1.25rem; right: 1.25rem;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .practitioner:hover { border-color: rgba(201, 168, 76, 0.45); }
+    .practitioner:hover::before { transform: scaleX(1); }
+
+    .practitioner-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+
+    .practitioner-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .practitioner-desc {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* APPS SUITE */
+    .suite { background: var(--deep2); }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .app-card {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: border-color 0.25s;
+    }
+
+    .app-card::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 2rem; right: 2rem;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .app-card:hover { border-color: rgba(201, 168, 76, 0.45); }
+    .app-card:hover::after { transform: scaleX(1); }
+
+    .app-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .app-tag.tier2 { color: var(--muted); }
+
+    .app-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .app-tagline {
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .app-desc {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: rgba(232, 228, 220, 0.65);
+    }
+
+    /* PRINCIPLES */
+    .principles { background: var(--deep); }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .principle-block {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .principle-block::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 2rem; right: 2rem;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .principle-block:hover::before { transform: scaleX(1); }
+
+    .principle-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .principle-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 0.65rem;
+    }
+
+    .principle-text {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* FOUNDING MEMBER */
+    .founding { background: var(--deep2); }
+
+    .founding-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .founding-inner .section-body { margin: 0 auto 2.5rem; }
+
+    .founding-form {
+      display: flex;
+      gap: 0;
+      max-width: 480px;
+      margin: 0 auto 1rem;
+    }
+
+    .founding-form input {
+      flex: 1;
+      padding: 0.85rem 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-right: none;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .founding-form input::placeholder { color: var(--muted); }
+    .founding-form input:focus { border-color: rgba(201,168,76,0.5); }
+
+    .founding-form button {
+      padding: 0.85rem 1.75rem;
+      background: var(--gold);
+      color: var(--deep);
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .founding-form button:hover { opacity: 0.88; }
+
+    .founding-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-logo span {
+      color: var(--muted);
+      font-size: 0.75rem;
+      display: block;
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    footer nav a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      transition: color 0.2s;
+    }
+
+    footer nav a:hover { color: var(--gold-light); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .practitioners-grid { grid-template-columns: repeat(3, 1fr); }
+      .apps-grid { grid-template-columns: repeat(2, 1fr); }
+      .promise-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .practitioners-grid { grid-template-columns: repeat(2, 1fr); }
+      .apps-grid { grid-template-columns: 1fr; }
+      .principles-grid { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      footer nav a { margin: 0 1rem; }
+      .founding-form { flex-direction: column; }
+      .founding-form input { border-right: 1px solid var(--border); border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Prosper <span>for Healers</span></a>
+    <ul class="nav-links">
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#who">Who It's For</a></li>
+      <li><a href="#apps">App Suite</a></li>
+      <li><a href="#principles">Our Promise</a></li>
+      <li><a href="#join">Join</a></li>
+      <li><a href="index.html#declaration" target="_blank">Declaration</a></li>
+    </ul>
+    <a href="#join" class="nav-cta">Join Early Access</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Prosper Foundation &nbsp;·&nbsp; Platform for Healers</p>
+      <h1 class="hero-title">
+        Your practice,<br /><em>fully owned by you.</em>
+      </h1>
+      <p class="hero-sub">
+        Everything you need to run your healing business — bookings, retreats, virtual sessions,
+        email, and your own website — in one platform built for the healer community.
+        Your data. Your content. Your terms.
+      </p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-primary">Join Early Access</a>
+        <a href="#apps" class="btn-outline">See the Apps</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROMISE / INTRO -->
+  <section class="promise" id="platform">
+    <div class="section-inner">
+      <div class="promise-grid">
+        <div class="reveal">
+          <p class="section-label">The Platform</p>
+          <h2 class="section-title">Serious tools. No extraction.</h2>
+          <p class="section-body">
+            Prosper Platform for Healers is a SaaS bundle — like Google Workspace or Microsoft 365,
+            but purpose-built for the healer community. Every app is designed around one commitment:
+            you own your data, you own your community, and you are never locked in.
+          </p>
+          <br />
+          <p class="section-body">
+            Prosper Foundation is the platform provider — a foundation-aligned organization,
+            not an investor-driven company. Our incentives are aligned with yours.
+          </p>
+        </div>
+        <div class="reveal" style="transition-delay: 0.15s;">
+          <blockquote class="promise-quote">
+            "A home for healers to do their work —
+            without surrendering their practice
+            to a platform that doesn't share their values."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHO IT'S FOR -->
+  <section class="for-who" id="who">
+    <div class="section-inner">
+      <p class="section-label reveal">Who It's For</p>
+      <h2 class="section-title reveal">Built for every kind of healer</h2>
+      <p class="section-body reveal" style="transition-delay: 0.1s;">
+        Whether you hold space one-on-one or lead a room of a hundred, Prosper gives you
+        the infrastructure to serve your community without compromise.
+      </p>
+
+      <div class="practitioners-grid">
+        <div class="practitioner reveal">
+          <span class="practitioner-icon">🌬️</span>
+          <div class="practitioner-name">Breathwork</div>
+          <p class="practitioner-desc">Facilitate sessions, host online circles, sell workshop passes</p>
+        </div>
+        <div class="practitioner reveal" style="transition-delay:0.07s;">
+          <span class="practitioner-icon">🔔</span>
+          <div class="practitioner-name">Sound Bath</div>
+          <p class="practitioner-desc">Publish events, manage attendance, stream immersive sessions</p>
+        </div>
+        <div class="practitioner reveal" style="transition-delay:0.14s;">
+          <span class="practitioner-icon">🧘</span>
+          <div class="practitioner-name">Yoga</div>
+          <p class="practitioner-desc">Schedule classes, manage recurring bookings, build your community</p>
+        </div>
+        <div class="practitioner reveal" style="transition-delay:0.21s;">
+          <span class="practitioner-icon">⚡</span>
+          <div class="practitioner-name">Energy Healing</div>
+          <p class="practitioner-desc">Run 1:1 sessions virtually, share resources securely with clients</p>
+        </div>
+        <div class="practitioner reveal" style="transition-delay:0.28s;">
+          <span class="practitioner-icon">🌿</span>
+          <div class="practitioner-name">Retreat Organizers</div>
+          <p class="practitioner-desc">Publish multi-day retreats, ticket sales, QR check-in, and more</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- APP SUITE -->
+  <section class="suite" id="apps">
+    <div class="section-inner">
+      <p class="section-label reveal">The App Suite</p>
+      <h2 class="section-title reveal">One membership. Every tool you need.</h2>
+
+      <div class="apps-grid">
+
+        <div class="app-card reveal">
+          <span class="app-tag">Core</span>
+          <div class="app-name">ProsperCalendar</div>
+          <div class="app-tagline">Scheduling &amp; Bookings</div>
+          <p class="app-desc">
+            Set your availability, accept session bookings, manage recurring classes,
+            and send automated reminders — all in one calendar built for practitioners.
+          </p>
+        </div>
+
+        <div class="app-card reveal" style="transition-delay:0.07s;">
+          <span class="app-tag">Core</span>
+          <div class="app-name">ProsperEvents</div>
+          <div class="app-tagline">Retreats &amp; Workshops</div>
+          <p class="app-desc">
+            Publish retreats and workshops, sell tickets, manage capacity,
+            and issue QR entry passes — without paying a third-party ticketing platform.
+          </p>
+        </div>
+
+        <div class="app-card reveal" style="transition-delay:0.14s;">
+          <span class="app-tag">Core</span>
+          <div class="app-name">ProsperMeet</div>
+          <div class="app-tagline">Virtual Sessions</div>
+          <p class="app-desc">
+            Host online healing sessions, breathwork circles, and group classes
+            in small-room video meetings with persistent chat and host-admit controls.
+          </p>
+        </div>
+
+        <div class="app-card reveal" style="transition-delay:0.21s;">
+          <span class="app-tag">Core</span>
+          <div class="app-name">ProsperMail</div>
+          <div class="app-tagline">Community Communications</div>
+          <p class="app-desc">
+            Stay in touch with your clients and community. Your email,
+            your list — delivered from your own domain, never sold to advertisers.
+          </p>
+        </div>
+
+        <div class="app-card reveal" style="transition-delay:0.28s;">
+          <span class="app-tag tier2">Suite</span>
+          <div class="app-name">ProsperCloudFiles</div>
+          <div class="app-tagline">Secure Storage</div>
+          <p class="app-desc">
+            Store session recordings, guided meditations, intake forms, and client materials.
+            Portable, private, and always accessible — yours to export at any time.
+          </p>
+        </div>
+
+        <div class="app-card reveal" style="transition-delay:0.35s;">
+          <span class="app-tag tier2">Suite</span>
+          <div class="app-name">Prosper Content Sites</div>
+          <div class="app-tagline">Your Healer Website</div>
+          <p class="app-desc">
+            Publish your public-facing presence — your story, your offerings, your events.
+            A first-party site that belongs to you, with no third-party dependency.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="reveal" style="margin-top: 2.5rem; font-size: 0.85rem; color: var(--muted); transition-delay: 0.4s;">
+        Also included: <span style="color: var(--text);">ProsperAuth</span> &amp; <span style="color: var(--text);">ProsperID</span> for secure sign-in and verified healer identity.
+        Prosper Creative Suite for promotional materials. More apps added as the platform grows.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRINCIPLES / OUR PROMISE -->
+  <section class="principles" id="principles">
+    <div class="section-inner">
+      <p class="section-label reveal">Our Promise</p>
+      <h2 class="section-title reveal">Built on four commitments</h2>
+
+      <div class="principles-grid">
+
+        <div class="principle-block reveal">
+          <div class="principle-num">01</div>
+          <div class="principle-title">You own your data</div>
+          <p class="principle-text">
+            Every piece of content you create, every client list you build,
+            every recording you upload — it belongs to you. Export it all,
+            at any time, in open formats. No hostage-taking.
+          </p>
+        </div>
+
+        <div class="principle-block reveal" style="transition-delay:0.1s;">
+          <div class="principle-num">02</div>
+          <div class="principle-title">No extraction logic</div>
+          <p class="principle-text">
+            We are a foundation, not a venture-backed company optimizing for your dependency.
+            We charge for the platform. We don't sell your data,
+            monetize your community, or take a cut of your bookings.
+          </p>
+        </div>
+
+        <div class="principle-block reveal" style="transition-delay:0.18s;">
+          <div class="principle-num">03</div>
+          <div class="principle-title">Open membership</div>
+          <p class="principle-text">
+            Any healer, any modality, any tradition. The platform is not
+            gatekept by certification bodies or commercial partners.
+            If you hold space for people to heal, you belong here.
+          </p>
+        </div>
+
+        <div class="principle-block reveal" style="transition-delay:0.26s;">
+          <div class="principle-num">04</div>
+          <div class="principle-title">Privacy by design</div>
+          <p class="principle-text">
+            Your clients trust you with sensitive moments. We carry that responsibility
+            seriously — portability, privacy, and product quality are operating constraints,
+            not marketing claims.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN / EARLY ACCESS -->
+  <section class="founding" id="join">
+    <div class="section-inner">
+      <div class="founding-inner">
+        <p class="section-label reveal">Early Access</p>
+        <h2 class="section-title reveal">Become a founding member</h2>
+        <p class="section-body reveal" style="margin: 0 auto 2.5rem; transition-delay:0.1s;">
+          Prosper Platform for Healers is in active development and seeking founding members.
+          Join early to shape the platform, receive lifetime founding pricing,
+          and be part of the community that builds this from the ground up.
+        </p>
+
+        <form class="founding-form reveal" style="transition-delay:0.2s;" onsubmit="handleJoin(event)">
+          <input type="email" id="join-email" placeholder="your@email.com" required />
+          <button type="submit">Join the Waitlist</button>
+        </form>
+
+        <p class="founding-note reveal" style="transition-delay:0.25s;">
+          No spam. No commitment. Just early access and a seat at the table.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      Prosper Platform for Healers
+      <span>A Prosper Foundation Initiative</span>
+    </div>
+    <p class="footer-copy">&copy; 2026 Prosper Foundation</p>
+    <nav>
+      <a href="#platform">Platform</a>
+      <a href="#apps">Apps</a>
+      <a href="#principles">Promise</a>
+      <a href="#join">Join</a>
+      <a href="index.html" target="_blank">Prosper Foundation</a>
+    </nav>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function handleJoin(e) {
+      e.preventDefault();
+      const email = document.getElementById('join-email').value;
+      const btn = e.target.querySelector('button');
+      btn.textContent = "You're on the list ✓";
+      btn.style.background = 'rgba(201,168,76,0.3)';
+      btn.style.color = 'var(--gold-light)';
+      btn.disabled = true;
+      document.getElementById('join-email').disabled = true;
+      console.log('Waitlist signup:', email);
+    }
+  </script>
+
+</body>
+</html>
