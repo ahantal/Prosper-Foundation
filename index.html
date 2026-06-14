@@ -4,6 +4,33 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Prosper Foundation – For Humans. By Humans.</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23c9b46e'/><text x='16' y='23' text-anchor='middle' font-family='Georgia%2C serif' font-size='20' font-weight='700' fill='%230c0d0d'>P</text></svg>"/>
+<link rel="apple-touch-icon" href="https://prosperfoundation.net/apple-touch-icon.png"/>
+
+<!-- SEO -->
+<meta name="description" content="Prosper Foundation is a nonprofit building resilient communities, cooperative economic alternatives, and sovereign technology infrastructure — for humans, by humans."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://prosperfoundation.net/"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Prosper Foundation"/>
+<meta property="og:title" content="Prosper Foundation – For Humans. By Humans."/>
+<meta property="og:description" content="We build resilient communities, cooperative economic alternatives, and sovereign technology so humanity doesn't just survive the coming decades, but flourishes through them."/>
+<meta property="og:url" content="https://prosperfoundation.net/"/>
+<meta property="og:image" content="https://prosperfoundation.net/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Prosper Foundation – For Humans. By Humans."/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Prosper Foundation – For Humans. By Humans."/>
+<meta name="twitter:description" content="We build resilient communities, cooperative economic alternatives, and sovereign technology so humanity doesn't just survive the coming decades, but flourishes through them."/>
+<meta name="twitter:image" content="https://prosperfoundation.net/og-image.jpg"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -331,15 +358,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
   <ul class="nav-links">
     <li><a onclick="show('mission')" id="n-mission">Mission</a></li>
     <li><a onclick="show('what-we-do')" id="n-what-we-do">What We Do</a></li>
-    <li><a onclick="show('healers')" id="n-healers">For Healers</a></li>
-    <li><a onclick="show('prosper-drive')" id="n-prosper-drive">Prosper Drive</a></li>
     <li><a onclick="show('initiatives')" id="n-initiatives">Initiatives</a></li>
     <li><a onclick="show('community-revival')" id="n-community-revival">Community Revival</a></li>
+    <li><a onclick="show('economic-liberation')" id="n-economic-liberation">Economic Liberation</a></li>
     <li><a onclick="show('technology')" id="n-technology">Technology</a></li>
     <li><a onclick="show('declaration')" id="n-declaration">Declaration</a></li>
+    <li><a onclick="show('accreditation')" id="n-accreditation">Accreditation</a></li>
     <li><a onclick="show('founders')" id="n-founders">Founders</a></li>
     <li><a onclick="show('get-involved')" id="n-get-involved">Get Involved</a></li>
-    <li><a class="nav-cta" onclick="show('get-involved')">Join Us →</a></li>
   </ul>
   <button class="nav-ham" id="nav-ham" onclick="toggleMobileNav()" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -350,16 +376,17 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
 <div class="mobile-nav" id="mobile-nav">
   <a onclick="show('mission');closeMobileNav()" id="mn-mission">Mission</a>
   <a onclick="show('what-we-do');closeMobileNav()" id="mn-what-we-do">What We Do</a>
-  <a onclick="show('healers');closeMobileNav()" id="mn-healers">For Healers</a>
-  <a onclick="show('prosper-drive');closeMobileNav()" id="mn-prosper-drive">Prosper Drive</a>
   <a onclick="show('initiatives');closeMobileNav()" id="mn-initiatives">Initiatives</a>
   <a onclick="show('community-revival');closeMobileNav()" id="mn-community-revival">Community Revival</a>
+  <a onclick="show('economic-liberation');closeMobileNav()" id="mn-economic-liberation">Economic Liberation</a>
   <a onclick="show('technology');closeMobileNav()" id="mn-technology">Technology</a>
   <a onclick="show('declaration');closeMobileNav()" id="mn-declaration">Declaration</a>
+  <a onclick="show('accreditation');closeMobileNav()" id="mn-accreditation">Accreditation</a>
   <a onclick="show('founders');closeMobileNav()" id="mn-founders">Founders</a>
   <a onclick="show('get-involved');closeMobileNav()" id="mn-get-involved">Get Involved</a>
+  <a onclick="show('healers');closeMobileNav()" id="mn-healers">For Healers</a>
+  <a onclick="show('prosper-drive');closeMobileNav()" id="mn-prosper-drive">Prosper Drive</a>
   <a onclick="show('privacy');closeMobileNav()" id="mn-privacy">Privacy Policy</a>
-  <a class="mob-cta" onclick="show('get-involved');closeMobileNav()">Join Us →</a>
 </div>
 
 <!-- ═══════════════════════════════════════════ HOME -->
@@ -411,7 +438,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
         <p>Rebuilding face-to-face local life circles that give families real social, physical, and emotional resilience in a world shaped by screens and AI companions.</p>
         <div style="margin-top:1.25rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--gold);">Learn more →</div>
       </div>
-      <div class="card" style="cursor:pointer;" onclick="show('mission')">
+      <div class="card" style="cursor:pointer;" onclick="show('economic-liberation')">
         <span class="card-label">Pillar 02</span>
         <h4>Economic Liberation</h4>
         <p>Training and supporting people to achieve real economic sovereignty: self-employment skills, multiple income streams, escape from payroll dependency.</p>
@@ -435,7 +462,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
     <!-- Initiative 1: Healers Platform -->
     <div class="healers-hero">
       <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap;">
-        <span class="badge badge-gold">Initiative 01 · Launching Now</span>
+        <span class="badge badge-gold">Initiative 01 · Coming Soon</span>
         <span class="badge" style="background:rgba(201,180,110,.07);color:var(--gold-dim);border-color:var(--gold-bdr);">Platform for Healers</span>
       </div>
       <h2>Prosper Platform <em>for Healers.</em></h2>
@@ -449,14 +476,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       </div>
       <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
         <a onclick="show('healers')" class="btn btn-gold">Explore the Platform →</a>
-        <a onclick="show('get-involved')" class="btn btn-ghost">Join Early Access</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfytZiDivSedYhIKSGMcSSbqGO9ChATKymTcsrY4Q9lKgdHDQ/viewform" target="_blank" class="btn btn-ghost">Join Early Access</a>
       </div>
     </div>
 
     <!-- Initiative 2: Prosper Drive -->
     <div class="drive-hero" style="margin-top:1px;">
       <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap;">
-        <span class="badge badge-drive">Initiative 02 · Launching Now</span>
+        <span class="badge badge-drive">Initiative 02 · Coming Soon</span>
         <span class="badge badge-green">Worker Owned</span>
       </div>
       <h2>Prosper <em>Drive.</em></h2>
@@ -765,7 +792,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       <h1 class="page-h1">Prosper Platform for Healers.<br><em>Your practice, fully owned by you.</em></h1>
       <p class="page-lede">A complete SaaS bundle for breathwork practitioners, yoga instructors, sound bath facilitators, energy healers, and retreat organizers. Your data. Your community. Your terms.</p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem;">
-        <span class="badge badge-gold">Launching Now</span>
+        <span class="badge badge-gold">Coming Soon</span>
         <span class="badge badge-gold">For Human By Human</span>
         <span class="badge badge-green">Data Sovereign</span>
       </div>
@@ -797,12 +824,19 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
 
     <div style="margin-top:4rem;">
       <div class="sec-label">Who It's For</div>
-      <div class="healers-pillars">
-        <div class="healers-pillar"><h5>🌬️ Breathwork Practitioners</h5><p>Facilitate sessions, host online circles, sell workshop passes</p></div>
-        <div class="healers-pillar"><h5>🔔 Sound Bath Facilitators</h5><p>Publish events, manage attendance, stream immersive sessions</p></div>
-        <div class="healers-pillar"><h5>🧘 Yoga Instructors</h5><p>Schedule classes, manage recurring bookings, build your community</p></div>
-        <div class="healers-pillar"><h5>⚡ Energy Healers</h5><p>Run 1:1 sessions virtually, share resources securely with clients</p></div>
-        <div class="healers-pillar"><h5>🌿 Retreat Organizers</h5><p>Multi-day retreats, ticketing, QR check-in, capacity management</p></div>
+      <div class="grid-2" style="margin-top:0;">
+        <div class="card" style="border-left:3px solid var(--gold);">
+          <span class="card-label">Category 01</span>
+          <h4>Energy Healers &amp; Spiritual Practitioners</h4>
+          <p style="margin-bottom:1rem;">For breathwork practitioners, yoga instructors, Tai Chi practitioners, meditation guides, somatic practitioners, sound bath facilitators, intuitive healers, reiki practitioners, holistic coaches, ceremonial facilitators, and other practitioners who hold space for healing and transformation.</p>
+          <p>Host 1:1 sessions, online circles, recurring classes, workshops, and community offerings — with your bookings, content, client list, and communications fully owned by you.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--green);">
+          <span class="card-label">Category 02</span>
+          <h4>Retreat Organizers &amp; Experience Hosts</h4>
+          <p style="margin-bottom:1rem;">For retreat leaders, wellness centers, workshop hosts, and community builders creating in-person, virtual, or hybrid healing experiences.</p>
+          <p>Manage retreats, workshops, ticketing, QR check-in, capacity, participant communication, shared materials, and follow-up — all on infrastructure aligned with your values.</p>
+        </div>
       </div>
     </div>
 
@@ -814,11 +848,22 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
         <div class="card"><span class="card-label">Core · Video</span><h4>ProsperMeet</h4><p>Host online healing sessions, breathwork circles, and group classes in small-room video meetings with persistent chat and host-admit controls.</p></div>
         <div class="card"><span class="card-label">Core · Communications</span><h4>ProsperMail</h4><p>Stay in touch with your clients and community. Your email, your list, delivered from your own domain, never sold to advertisers.</p></div>
         <div class="card"><span class="card-label">Suite · Storage</span><h4>ProsperCloudFiles</h4><p>Store session recordings, guided meditations, intake forms, and client materials. Portable, private, and always yours to export.</p></div>
-        <div class="card"><span class="card-label">Suite · Website</span><h4>Prosper Content Sites</h4><p>Your public-facing presence: your story, offerings, and events. A first-party site that belongs to you, with no third-party dependency.</p></div>
+        <div class="card"><span class="card-label">Suite · Website</span><h4>Prosper Content Sites</h4><p>Your public-facing presence: your story, offerings, events, and a blog section to share your practice's voice — all on infrastructure you own, with no third-party dependency.</p></div>
+      </div>
+      <div class="grid-2" style="margin-top:1px;">
+        <div class="card"><span class="card-label">Suite · Payments</span><h4>ProsperPay</h4><p>Accept payments through PayPal, Ko-fi, Stripe, and other international and domestic processors — all in one place. No extraction logic. You keep more of what you earn, and your clients have options that match their preferences.</p></div>
+        <div class="card"><span class="card-label">Suite · Messaging</span><h4>ProsperMessage</h4><p>A private messaging module for your practice community — the equivalent of Slack or WhatsApp, built on Prosper infrastructure. Keep conversations with clients and community members in a space you control, not a corporate platform that harvests your data.</p></div>
       </div>
       <div class="grid-2" style="margin-top:1px;">
         <div class="card"><span class="card-label">Identity</span><h4>ProsperAuth + ProsperID</h4><p>Secure sign-in, passkeys, session management, and a verified healer identity, the foundation that everything else builds on.</p></div>
         <div class="card"><span class="card-label">Suite · Creative</span><h4>Prosper Creative Suite</h4><p>Create promotional graphics, event visuals, and social content for your practice, without surrendering your creative assets to Adobe.</p></div>
+      </div>
+      <div style="margin-top:1px;">
+        <div class="card" style="border-top:3px solid var(--gold);">
+          <span class="card-label">Anchor · Community Hub</span>
+          <h4>Prosper Community</h4>
+          <p>The central hub that ties everything together. Every Prosper member — healer, organizer, driver, or community builder — has access to Prosper Community: a shared space for connection, collaboration, mutual support, and collective resources. It's not just a feature; it's the foundation that makes the whole ecosystem more than the sum of its parts.</p>
+        </div>
       </div>
     </div>
 
@@ -851,7 +896,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
         <p>Join early to shape the platform, receive founding member pricing, and be part of the community that builds this from the ground up.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:.75rem;">
-        <button class="btn btn-gold" onclick="show('get-involved')">Join Early Access →</button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfytZiDivSedYhIKSGMcSSbqGO9ChATKymTcsrY4Q9lKgdHDQ/viewform" target="_blank" class="btn btn-gold">Join Early Access →</a>
         <button class="btn btn-ghost btn-sm" onclick="show('initiatives')">See All Initiatives →</button>
       </div>
     </div>
@@ -869,7 +914,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       <h1 class="page-h1" style="color:var(--white);">Prosper Drive.<br><em style="color:var(--drive);">Ride-hailing, reimagined.</em></h1>
       <p class="page-lede">The world's first worker-owned ride-hailing cooperative. Built on the "For Human by Human" principle, where drivers own the platform, keep more of what they earn, and the community stays in control.</p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem;">
-        <span class="badge badge-drive">Launching Now</span>
+        <span class="badge badge-drive">Coming Soon</span>
         <span class="badge badge-gold">For Human By Human</span>
         <span class="badge badge-green">Worker Owned</span>
       </div>
@@ -932,12 +977,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       <div class="sec-label">Built on ProsperApps Infrastructure</div>
       <div class="m-block green">
         <h3>Why sovereign infrastructure makes Prosper Drive possible.</h3>
-        <p class="prose">Prosper Drive doesn't run on AWS, Google Cloud, or Stripe's standard APIs. It runs on ProsperApps, our own identity, payment, organization, and communication infrastructure. <strong>This is why we invested in building ProsperApps first.</strong> The payment digital twins (WalletDT, StripeDT, VippsDT), ProsperAuth, ProsperOrg, ProsperMail, and ProsperSafe form the operational backbone of everything Prosper Drive needs, without the data harvesting, without the lock-in, without the extraction.</p>
+        <p class="prose">Prosper Drive doesn't run on AWS, Google Cloud, or Stripe's standard APIs. It runs on ProsperApps, our own identity, payment, organization, and communication infrastructure. <strong>This is why we invested in building ProsperApps first.</strong> ProsperPay, ProsperAuth, ProsperOrg, ProsperMail, ProsperMessage, and ProsperSafe form the operational backbone of everything Prosper Drive needs — without the data harvesting, without the lock-in, without the extraction.</p>
       </div>
       <div class="grid-3" style="margin-top:2rem;">
-        <div class="card"><span class="card-label">Payments</span><h4>WalletDT & StripeDT</h4><p>Digital twin payment surfaces for safe pre-production testing and governed live payment handoffs, without surrendering transaction data to third parties.</p></div>
+        <div class="card"><span class="card-label">Payments</span><h4>ProsperPay</h4><p>Integrated payment processing through PayPal, Stripe, and other domestic and international processors — all governed by Prosper infrastructure. Fair fare economics, transparent splits, and no third-party surveillance of transaction data.</p></div>
         <div class="card"><span class="card-label">Identity</span><h4>ProsperAuth + ProsperID</h4><p>Driver and rider authentication with passkeys, session governance, and first-party identifiers. No Google login required. No Facebook.</p></div>
         <div class="card"><span class="card-label">Organization</span><h4>ProsperOrg</h4><p>Multi-tenant cooperative infrastructure, with hosted spaces, invite governance, shared drives, and billing that supports the cooperative ownership model natively.</p></div>
+        <div class="card"><span class="card-label">Communications</span><h4>ProsperMail + ProsperMessage</h4><p>Privacy-first mail and real-time messaging for driver communities, rider communication, and cooperative governance — on infrastructure the cooperative owns, not Big Tech.</p></div>
+        <div class="card"><span class="card-label">Community Hub</span><h4>Prosper Community</h4><p>Drivers as co-owners aren't just workers — they're members of a community. Prosper Community gives the cooperative its shared space for decision-making, peer support, and collective resources.</p></div>
       </div>
     </div>
 
@@ -990,17 +1037,17 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
     <div class="sec-label">Active Initiatives</div>
 
     <div class="healers-hero" style="margin-top:0;">
-      <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-gold">Initiative 01 · Launching Now</span></div>
+      <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-gold">Initiative 01 · Coming Soon</span></div>
       <h2>Prosper Platform <em>for Healers</em></h2>
       <p>A purpose-built SaaS bundle for breathwork practitioners, yoga instructors, sound bath facilitators, energy healers, and retreat organizers. Own your practice. Own your data. No extraction, no lock-in.</p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
         <a onclick="show('healers')" class="btn btn-gold">Explore the Platform →</a>
-        <a onclick="show('get-involved')" class="btn btn-ghost btn-sm">Join Early Access</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfytZiDivSedYhIKSGMcSSbqGO9ChATKymTcsrY4Q9lKgdHDQ/viewform" target="_blank" class="btn btn-ghost btn-sm">Join Early Access</a>
       </div>
     </div>
 
     <div class="drive-hero" style="margin-top:1px;">
-      <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-drive">Initiative 02 · Launching Now</span><span class="badge badge-green">Worker Owned</span></div>
+      <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-drive">Initiative 02 · Coming Soon</span><span class="badge badge-green">Worker Owned</span></div>
       <h2>Prosper <em>Drive</em></h2>
       <p>Worker-owned ride-hailing cooperative. The "For Human by Human" alternative to Uber and Lyft, where drivers own the platform, communities keep the wealth, and no one is just a metric.</p>
       <button class="btn btn-drive" onclick="show('prosper-drive')">Full Prosper Drive story →</button>
@@ -1066,6 +1113,114 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       </div>
     </div>
     <div style="margin-top:2rem;" class="prose"><p>We additionally welcome additions to our founding team. See the Founders page to learn more about joining.</p></div>
+
+    <div style="margin-top:3rem;">
+      <div class="sec-label">Accreditation</div>
+      <div class="m-block" style="border-left-color:var(--gold);">
+        <h3>The Prosper Accreditation Program</h3>
+        <p class="prose">Organizations that formally adopt this Declaration by signing a Memorandum of Understanding with Prosper Foundation are eligible for <strong>Prosper Accreditation</strong>. Accredited organizations may display the Prosper Accredited Seal publicly and are listed on the Accreditation page as recognized members of the program. Prosper Foundation verifies and enforces compliance on an ongoing basis — accreditation is a maintained commitment, not a one-time badge. Organizations building on ProsperApps infrastructure receive automatic accreditation eligibility, as the platform is architecturally designed to comply with this Declaration.</p>
+        <div style="margin-top:1.25rem;">
+          <button class="btn btn-gold btn-sm" onclick="show('accreditation')">Learn about the Accreditation Program →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ ECONOMIC LIBERATION -->
+<div class="page" id="page-economic-liberation">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">Economic Liberation</div>
+      <h1 class="page-h1">Breaking free from the<br><em>payroll-to-payroll trap.</em></h1>
+      <p class="page-lede">Real economic sovereignty is not about earning more inside a broken system. It's about owning your income, your time, and your future — independent of any single employer, platform, or payroll.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sec-label">Why It Matters</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:4rem;">
+      <div>
+        <h2 class="dsp">Billions of people are one crisis away from <em>financial collapse.</em></h2>
+        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:.75rem;">
+          <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--muted);"><span style="color:var(--gold);font-family:var(--mono);font-size:.7rem;flex-shrink:0;margin-top:.2rem;">→</span>AI automation is eliminating millions of jobs, with no guarantee of replacement.</div>
+          <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--muted);"><span style="color:var(--gold);font-family:var(--mono);font-size:.7rem;flex-shrink:0;margin-top:.2rem;">→</span>Gig platforms extract up to 40% of worker earnings while providing zero ownership.</div>
+          <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--muted);"><span style="color:var(--gold);font-family:var(--mono);font-size:.7rem;flex-shrink:0;margin-top:.2rem;">→</span>Most people have one income stream — and no safety net when it disappears.</div>
+          <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--muted);"><span style="color:var(--gold);font-family:var(--mono);font-size:.7rem;flex-shrink:0;margin-top:.2rem;">→</span>Economic dependency is not just financial — it shapes what you can say, do, and become.</div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>The prevailing model tells people to get a good job, stay loyal, and hope the payroll keeps coming. For generations, that worked well enough. It no longer does.</p>
+        <p>We believe <strong>economic sovereignty is a prerequisite for human dignity.</strong> When your income depends entirely on a single employer or a single platform, you are not free — you are compliant. And compliance under economic pressure is one of the most powerful forces keeping communities fragile.</p>
+        <p>Economic Liberation is the second pillar of Prosper Foundation's work because no community can be truly resilient when its members are economically trapped.</p>
+      </div>
+    </div>
+
+    <div class="m-block">
+      <h3>What economic liberation actually looks like</h3>
+      <p class="prose">It means developing real self-employment skills. Building multiple income streams so no single loss is catastrophic. Escaping dependency on any one employer, platform, or institution. Owning the tools of your trade rather than renting them from extractive corporations. And doing it as part of a community that pools knowledge, resources, and mutual support.</p>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">How We Approach It</div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-label">Skills</span>
+          <h4>Self-Employment Education</h4>
+          <p>Practical training in freelancing, consulting, and running a small practice — the real skills that let people generate income on their own terms.</p>
+        </div>
+        <div class="card">
+          <span class="card-label">Income</span>
+          <h4>Multiple Income Streams</h4>
+          <p>Building portfolios of income sources — services, digital products, cooperative earnings — so that no single disruption can be catastrophic.</p>
+        </div>
+        <div class="card">
+          <span class="card-label">Ownership</span>
+          <h4>Cooperative Alternatives</h4>
+          <p>Worker-owned platforms where earnings stay with the people who generate them, and the community controls the infrastructure it depends on.</p>
+        </div>
+        <div class="card">
+          <span class="card-label">Tools</span>
+          <h4>Sovereign Technology</h4>
+          <p>Digital tools you own, not rent. Infrastructure that can't be pulled away or repriced at the whim of a Silicon Valley board.</p>
+        </div>
+        <div class="card">
+          <span class="card-label">Community</span>
+          <h4>Mutual Economic Support</h4>
+          <p>Communities that share opportunities, refer work, pool expertise, and create local economic ecosystems that reward contribution.</p>
+        </div>
+        <div class="card">
+          <span class="card-label">Safety</span>
+          <h4>Resilience Before Crisis</h4>
+          <p>Building economic safety nets — savings habits, shared resources, community funds — while times are stable so they exist when they're needed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">Our Initiatives Express This Pillar</div>
+      <div class="healers-hero" style="margin-top:0;">
+        <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-gold">Initiative 01 · Coming Soon</span></div>
+        <h2>Prosper Platform <em>for Healers</em></h2>
+        <p>Healers and wellness practitioners are exactly the people who should be economically sovereign — but most are trapped between extractive booking platforms, scattered tools, and no real ownership of their client relationships. The Prosper Platform for Healers is our first concrete answer to that.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a onclick="show('healers')" class="btn btn-gold">Explore the Platform →</a>
+        </div>
+      </div>
+      <div class="drive-hero" style="margin-top:1px;">
+        <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-drive">Initiative 02 · Coming Soon</span><span class="badge badge-green">Worker Owned</span></div>
+        <h2>Prosper <em>Drive</em></h2>
+        <p>Ride-hailing drivers are among the most economically exposed workers in the gig economy — earning less each year, owning nothing, and facing displacement by autonomous vehicles with no stake in the transition. Prosper Drive gives them ownership, fair economics, and a community-controlled platform.</p>
+        <a onclick="show('prosper-drive')" class="btn btn-drive">Full Prosper Drive story →</a>
+      </div>
+    </div>
+
+    <div class="cta-strip" style="margin-top:4rem;">
+      <div>
+        <h3>Economic freedom starts with a decision to build it.</h3>
+        <p>Join the co-founders shaping Prosper's economic liberation programs and initiatives.</p>
+      </div>
+      <button class="btn btn-gold" onclick="show('get-involved')">Get Involved →</button>
+    </div>
   </div>
 </div>
 
@@ -1286,6 +1441,89 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       <p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
       <h3>Where your data is sent</h3>
       <p>Visitor comments may be checked through an automated spam detection service.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ ACCREDITATION -->
+<div class="page" id="page-accreditation">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">Accreditation</div>
+      <h1 class="page-h1">The Prosper Accreditation<br><em>Program.</em></h1>
+      <p class="page-lede">A formal recognition for organizations that adopt Prosper's Technology Sovereignty Declaration — committing to the same standards of privacy, data ownership, and human-centered design that we hold ourselves to.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sec-label">What It Is</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:4rem;">
+      <div>
+        <h2 class="dsp">A seal that means <em>something.</em></h2>
+        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:.75rem;">
+          <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--muted);"><span style="color:var(--gold);font-family:var(--mono);font-size:.7rem;flex-shrink:0;margin-top:.2rem;">→</span>Independently verified compliance with the Prosper Declaration</div>
+          <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--muted);"><span style="color:var(--gold);font-family:var(--mono);font-size:.7rem;flex-shrink:0;margin-top:.2rem;">→</span>Formally recognized and listed by Prosper Foundation</div>
+          <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--muted);"><span style="color:var(--gold);font-family:var(--mono);font-size:.7rem;flex-shrink:0;margin-top:.2rem;">→</span>Right to display the Prosper Accredited seal publicly</div>
+          <div style="display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:var(--muted);"><span style="color:var(--gold);font-family:var(--mono);font-size:.7rem;flex-shrink:0;margin-top:.2rem;">→</span>Ongoing compliance monitored and enforced by Prosper</div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>The Prosper Accreditation Program exists because declarations without accountability are just marketing. We believe organizations that genuinely uphold the principles of technology sovereignty, data ownership, and human-centered design should be able to demonstrate that in a way visitors and partners can trust.</p>
+        <p>Accredited organizations have signed a Memorandum of Understanding with Prosper Foundation, formally adopting our <strong>Technology Sovereignty Declaration</strong> and granting Prosper the right to verify and enforce compliance. In return, they earn the right to publish the Prosper Accredited Seal on their websites and to be publicly listed here.</p>
+      </div>
+    </div>
+
+    <div class="m-block">
+      <h3>How Accreditation Works</h3>
+      <div class="prose">
+        <p><strong>Step 1 — Adopt the Declaration.</strong> The organization reviews and commits to Prosper's Technology Sovereignty Declaration: the standards around privacy, data ownership, portability, healthy design, and purpose beyond profit.</p>
+        <p><strong>Step 2 — Sign the MOU.</strong> A formal Memorandum of Understanding is signed with Prosper Foundation, granting us the right and responsibility to verify compliance over time.</p>
+        <p><strong>Step 3 — Earn the Seal.</strong> Accredited organizations may publish the Prosper Accredited Seal on their websites and are listed on this page as recognized members of the accreditation program.</p>
+        <p><strong>Ongoing — Compliance Enforcement.</strong> Prosper Foundation monitors compliance. Accreditation is not a one-time checkmark; it is a maintained commitment. Organizations that fall out of compliance are delisted.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">Two Paths to Accreditation</div>
+      <div class="grid-2" style="margin-top:0;">
+        <div class="card" style="border-left:3px solid var(--gold);">
+          <span class="card-label">Path 01</span>
+          <h4>Declaration-Based Accreditation</h4>
+          <p>Any organization — regardless of what technology they use — may apply for accreditation by formally adopting the Prosper Technology Sovereignty Declaration and signing an MOU. Prosper reviews and verifies compliance on an ongoing basis.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--green);">
+          <span class="card-label">Path 02</span>
+          <h4>Automatic Accreditation</h4>
+          <p>Organizations building on the ProsperApps platform are automatically eligible for accreditation. Because ProsperApps is structurally designed to comply with the Declaration, organizations using it inherit compliance by design — not just by promise.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">The Prosper Accredited Seal</div>
+      <div class="m-block" style="border-left-color:var(--gold);">
+        <h3>A mark the public can rely on</h3>
+        <p class="prose">The Prosper Accredited Seal is not a self-reported badge. It is issued by Prosper Foundation only to organizations that have formally adopted the Declaration, signed an MOU, and passed our compliance review. When you see it on an organization's website, you can trust that Prosper stands behind that claim — and that we will remove it if the organization no longer meets the standard.</p>
+        <p class="prose" style="margin-top:.75rem;">The seal name and visual identity are currently in development. If you have ideas or would like to be involved in shaping the program, reach out through the Get Involved page.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">Accredited Organizations</div>
+      <div class="m-block" style="border-left-color:var(--dim);">
+        <h3>Program launching soon</h3>
+        <p class="prose">The Prosper Accreditation Program is in its design phase. The first accredited organizations will be listed here once the MOU framework and compliance review process are formalized. Organizations interested in early participation are encouraged to reach out.</p>
+      </div>
+    </div>
+
+    <div class="cta-strip" style="margin-top:4rem;">
+      <div>
+        <h3>Ready to adopt the Declaration?</h3>
+        <p>If your organization is committed to technology sovereignty, data ownership, and human-centered design, we'd like to hear from you.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.75rem;">
+        <button class="btn btn-gold" onclick="show('get-involved')">Get Involved →</button>
+        <button class="btn btn-ghost btn-sm" onclick="show('declaration')">Read the Declaration →</button>
+      </div>
     </div>
   </div>
 </div>
