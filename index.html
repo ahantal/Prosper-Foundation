@@ -35,26 +35,26 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:        #0c0d0d;
-  --bg2:       #121414;
-  --bg3:       #181a1a;
-  --bg4:       #1e2121;
-  --border:    #252828;
-  --border2:   #2e3232;
-  --text:      #e6e3dd;
-  --muted:     #787d7c;
-  --dim:       #454a49;
-  --gold:      #c9b46e;
-  --gold-dim:  #8a7a4a;
-  --gold-bg:   rgba(201,180,110,0.07);
-  --gold-bdr:  rgba(201,180,110,0.2);
-  --green:     #7db89a;
-  --green-bg:  rgba(125,184,154,0.06);
-  --green-bdr: rgba(125,184,154,0.18);
-  --drive:     #e05c3a;
-  --drive-dim: rgba(224,92,58,0.08);
-  --drive-bdr: rgba(224,92,58,0.22);
-  --white:     #f4f1eb;
+  --bg:        #ffffff;
+  --bg2:       #f7f6f4;
+  --bg3:       #eeecea;
+  --bg4:       #e5e3e0;
+  --border:    #dbd9d4;
+  --border2:   #c8c6c1;
+  --text:      #1c1c1a;
+  --muted:     #5e6060;
+  --dim:       #909390;
+  --gold:      #9B7C22;
+  --gold-dim:  #7a6018;
+  --gold-bg:   rgba(155,124,34,0.08);
+  --gold-bdr:  rgba(155,124,34,0.25);
+  --green:     #2E7D5A;
+  --green-bg:  rgba(46,125,90,0.07);
+  --green-bdr: rgba(46,125,90,0.25);
+  --drive:     #c94428;
+  --drive-dim: rgba(201,68,40,0.07);
+  --drive-bdr: rgba(201,68,40,0.28);
+  --white:     #0d0d0c;
   --serif:     'DM Serif Display', Georgia, serif;
   --sans:      'DM Sans', sans-serif;
   --mono:      'Space Mono', monospace;
@@ -72,15 +72,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;background:rgba(12,13,13,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;}
 .nav-brand{display:flex;align-items:center;gap:.75rem;cursor:pointer;text-decoration:none;}
-.nav-icon{width:30px;height:30px;background:var(--gold);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:14px;font-weight:700;color:var(--bg);flex-shrink:0;letter-spacing:-.01em;}
-.nav-name{font-family:var(--serif);font-size:1.05rem;color:var(--white);letter-spacing:.01em;}
+.nav-logo{height:36px;width:auto;display:block;flex-shrink:0;}
+.nav-name{font-family:var(--serif);font-size:1.05rem;color:var(--text);letter-spacing:.01em;}
 .nav-sub{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;line-height:1;margin-top:1px;}
 .nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;}
 .nav-links a{font-size:.8rem;font-weight:500;color:var(--muted);text-decoration:none;padding:.4rem .8rem;border-radius:6px;letter-spacing:.02em;transition:color .18s,background .18s;cursor:pointer;}
 .nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--bg3);}
-.nav-cta{background:var(--gold)!important;color:var(--bg)!important;font-weight:600!important;}
+.nav-cta{background:var(--gold)!important;color:#fff!important;font-weight:600!important;}
 .nav-cta:hover{opacity:.86!important;background:var(--gold)!important;}
 
 /* ── LAYOUT ── */
@@ -113,7 +113,7 @@ h3.sub{font-family:var(--serif);font-size:1.4rem;color:var(--white);font-weight:
 
 /* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.5rem;border-radius:var(--r);font-size:.85rem;font-weight:600;letter-spacing:.02em;text-decoration:none;border:none;cursor:pointer;transition:all .2s;font-family:var(--sans);}
-.btn-gold{background:var(--gold);color:var(--bg);}
+.btn-gold{background:var(--gold);color:#fff;}
 .btn-gold:hover{opacity:.87;transform:translateY(-1px);}
 .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
 .btn-ghost:hover{border-color:var(--muted);color:var(--text);}
@@ -162,7 +162,7 @@ h3.sub{font-family:var(--serif);font-size:1.4rem;color:var(--white);font-weight:
 .product-status{display:flex;align-items:center;gap:.6rem;margin-top:.6rem;}
 
 /* ── DRIVE HERO BLOCK ── */
-.drive-hero{background:linear-gradient(135deg,var(--bg2) 0%,#1a1210 100%);border:1px solid var(--border);border-top:3px solid var(--drive);padding:4rem 3rem;margin:3rem 0;position:relative;overflow:hidden;}
+.drive-hero{background:linear-gradient(135deg,var(--bg2) 0%,#fff3ef 100%);border:1px solid var(--border);border-top:3px solid var(--drive);padding:4rem 3rem;margin:3rem 0;position:relative;overflow:hidden;}
 .drive-hero::after{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(224,92,58,.06) 0%,transparent 70%);border-radius:50%;}
 .drive-hero h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);color:var(--white);line-height:1.1;margin-bottom:1.1rem;font-weight:400;}
 .drive-hero h2 em{font-style:italic;color:var(--drive);}
@@ -176,7 +176,7 @@ h3.sub{font-family:var(--serif);font-size:1.4rem;color:var(--white);font-weight:
 .drive-pillar p{color:var(--muted);font-size:.85rem;line-height:1.62;font-weight:300;}
 
 /* ── HEALERS HERO BLOCK ── */
-.healers-hero{background:linear-gradient(135deg,var(--bg2) 0%,#12100a 100%);border:1px solid var(--border);border-top:3px solid var(--gold);padding:4rem 3rem;margin:3rem 0;position:relative;overflow:hidden;}
+.healers-hero{background:linear-gradient(135deg,var(--bg2) 0%,#fffcf0 100%);border:1px solid var(--border);border-top:3px solid var(--gold);padding:4rem 3rem;margin:3rem 0;position:relative;overflow:hidden;}
 .healers-hero::after{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(201,180,110,.06) 0%,transparent 70%);border-radius:50%;}
 .healers-hero h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);color:var(--white);line-height:1.1;margin-bottom:1.1rem;font-weight:400;}
 .healers-hero h2 em{font-style:italic;color:var(--gold);}
@@ -254,8 +254,8 @@ h3.sub{font-family:var(--serif);font-size:1.4rem;color:var(--white);font-weight:
 .hero-scroll{position:absolute;bottom:2.5rem;left:2.5rem;display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
 
 /* ── AMBIENT GLOW ── */
-.glow-gold{position:fixed;top:-200px;right:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,180,110,.035) 0%,transparent 65%);pointer-events:none;z-index:0;}
-.glow-green{position:fixed;bottom:-200px;left:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(125,184,154,.025) 0%,transparent 65%);pointer-events:none;z-index:0;}
+.glow-gold{display:none;}
+.glow-green{display:none;}
 
 /* ── FOOTER ── */
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2.5rem 2rem;margin-top:5rem;position:relative;z-index:1;}
@@ -282,12 +282,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
 .nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .nav-ham.open span:nth-child(2){opacity:0;}
 .nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-nav{display:none;position:fixed;top:62px;left:0;right:0;z-index:199;background:rgba(12,13,13,0.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem 0;}
+.mobile-nav{display:none;position:fixed;top:62px;left:0;right:0;z-index:199;background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem 0;}
 .mobile-nav.open{display:flex;}
 .mobile-nav a{font-size:.9rem;font-weight:500;color:var(--muted);text-decoration:none;padding:.85rem 2rem;border-bottom:1px solid var(--border);letter-spacing:.02em;cursor:pointer;transition:color .15s,background .15s;}
 .mobile-nav a:last-child{border-bottom:none;}
 .mobile-nav a:hover,.mobile-nav a.active{color:var(--text);background:var(--bg3);}
-.mobile-nav .mob-cta{background:var(--gold);color:var(--bg);font-weight:600;margin:1rem 2rem;border-radius:var(--r);text-align:center;border:none;}
+.mobile-nav .mob-cta{background:var(--gold);color:#fff;font-weight:600;margin:1rem 2rem;border-radius:var(--r);text-align:center;border:none;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
@@ -349,11 +349,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
 <!-- ═══════════════════════════════════ NAV -->
 <nav>
   <a class="nav-brand" onclick="show('home')">
-    <div class="nav-icon">P</div>
-    <div>
-      <span class="nav-name">Prosper Foundation</span>
-      <span class="nav-sub">For Humans. By Humans.</span>
-    </div>
+    <img class="nav-logo" src="images/PF_Logo.jpeg" alt="Prosper Foundation" />
   </a>
   <ul class="nav-links">
     <li><a onclick="show('mission')" id="n-mission">Mission</a></li>
@@ -1574,8 +1570,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="nav-brand" style="cursor:default;pointer-events:none;">
-        <div class="nav-icon">P</div>
-        <div><span class="nav-name">Prosper Foundation</span><span class="nav-sub">For Humans. By Humans.</span></div>
+        <img class="nav-logo" src="images/PF_Logo.jpeg" alt="Prosper Foundation" style="height:40px;" />
       </div>
       <p>A nonprofit dedicated to empowering individuals and communities to thrive through cooperation, technology, and human-centered innovation.</p>
     </div>
