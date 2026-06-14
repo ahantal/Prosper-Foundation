@@ -360,8 +360,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
     <li><a onclick="show('what-we-do')" id="n-what-we-do">What We Do</a></li>
     <li><a onclick="show('initiatives')" id="n-initiatives">Initiatives</a></li>
     <li><a onclick="show('community-revival')" id="n-community-revival">Community Revival</a></li>
+    <li><a onclick="show('technology')" id="n-technology">Sovereign Tech</a></li>
     <li><a onclick="show('economic-liberation')" id="n-economic-liberation">Economic Liberation</a></li>
-    <li><a onclick="show('technology')" id="n-technology">Technology</a></li>
     <li><a onclick="show('declaration')" id="n-declaration">Declaration</a></li>
     <li><a onclick="show('accreditation')" id="n-accreditation">Accreditation</a></li>
     <li><a onclick="show('founders')" id="n-founders">Founders</a></li>
@@ -378,8 +378,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
   <a onclick="show('what-we-do');closeMobileNav()" id="mn-what-we-do">What We Do</a>
   <a onclick="show('initiatives');closeMobileNav()" id="mn-initiatives">Initiatives</a>
   <a onclick="show('community-revival');closeMobileNav()" id="mn-community-revival">Community Revival</a>
+  <a onclick="show('technology');closeMobileNav()" id="mn-technology">Sovereign Tech</a>
   <a onclick="show('economic-liberation');closeMobileNav()" id="mn-economic-liberation">Economic Liberation</a>
-  <a onclick="show('technology');closeMobileNav()" id="mn-technology">Technology</a>
   <a onclick="show('declaration');closeMobileNav()" id="mn-declaration">Declaration</a>
   <a onclick="show('accreditation');closeMobileNav()" id="mn-accreditation">Accreditation</a>
   <a onclick="show('founders');closeMobileNav()" id="mn-founders">Founders</a>
@@ -438,16 +438,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
         <p>Rebuilding face-to-face local life circles that give families real social, physical, and emotional resilience in a world shaped by screens and AI companions.</p>
         <div style="margin-top:1.25rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--gold);">Learn more →</div>
       </div>
-      <div class="card" style="cursor:pointer;" onclick="show('economic-liberation')">
-        <span class="card-label">Pillar 02</span>
-        <h4>Economic Liberation</h4>
-        <p>Training and supporting people to achieve real economic sovereignty: self-employment skills, multiple income streams, escape from payroll dependency.</p>
-        <div style="margin-top:1.25rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--gold);">Learn more →</div>
-      </div>
       <div class="card" style="cursor:pointer;" onclick="show('technology')">
-        <span class="card-label">Pillar 03</span>
+        <span class="card-label">Pillar 02</span>
         <h4>Sovereign Technology</h4>
         <p>Building and owning the digital infrastructure humanity needs: private, community-controlled, and designed to serve people, not extract from them.</p>
+        <div style="margin-top:1.25rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--gold);">Learn more →</div>
+      </div>
+      <div class="card" style="cursor:pointer;" onclick="show('economic-liberation')">
+        <span class="card-label">Pillar 03</span>
+        <h4>Economic Liberation</h4>
+        <p>Training and supporting people to achieve real economic sovereignty: self-employment skills, multiple income streams, escape from payroll dependency.</p>
         <div style="margin-top:1.25rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--gold);">Learn more →</div>
       </div>
     </div>
@@ -473,10 +473,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
         <div class="healers-pillar"><h5>ProsperMeet</h5><p>Virtual sessions and online circles</p></div>
         <div class="healers-pillar"><h5>ProsperMail</h5><p>Community email, your domain</p></div>
         <div class="healers-pillar"><h5>ProsperCloudFiles</h5><p>Recordings, materials, secure storage</p></div>
+        <div class="healers-pillar"><h5>Prosper Content Sites</h5><p>Your website and blog, fully owned</p></div>
+        <div class="healers-pillar"><h5>ProsperPay</h5><p>Payments via Stripe, PayPal, Ko-fi and more</p></div>
+        <div class="healers-pillar"><h5>ProsperMessage</h5><p>Private messaging for your community</p></div>
+        <div class="healers-pillar"><h5>Prosper Community</h5><p>The anchor hub for all Prosper members</p></div>
       </div>
       <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
         <a onclick="show('healers')" class="btn btn-gold">Explore the Platform →</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfytZiDivSedYhIKSGMcSSbqGO9ChATKymTcsrY4Q9lKgdHDQ/viewform" target="_blank" class="btn btn-ghost">Join Early Access</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfytZiDivSedYhIKSGMcSSbqGO9ChATKymTcsrY4Q9lKgdHDQ/viewform" target="_blank" class="btn btn-ghost">Early Access</a>
       </div>
     </div>
 
@@ -580,8 +584,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
     <div style="margin-top:4rem;">
       <div class="sec-label">Our Approach: Three Pillars</div>
       <div class="pillar"><div class="pillar-n">01 / Community Revival</div><h4>Community Revival</h4><p>We help people build and revitalize local communities that provide genuine social support, shared resources, and collective resilience. We believe the antidote to isolation and vulnerability is human connection at the local level.</p></div>
-      <div class="pillar"><div class="pillar-n">02 / Economic Liberation</div><h4>Economic Liberation</h4><p>We train and support people to break free from the "payroll-to-payroll rat race" and develop self-employment skills, multiple income streams, and true economic sovereignty, so they can weather any storm.</p></div>
-      <div class="pillar"><div class="pillar-n">03 / Sovereign Technology</div><h4>Sovereign Technology</h4><p>We build and own the digital infrastructure our communities depend on. When technology is controlled by aligned, community-owned organizations rather than extractive corporations, it becomes a pillar of resilience rather than a vulnerability. This is the philosophy behind ProsperApps.</p></div>
+      <div class="pillar"><div class="pillar-n">02 / Sovereign Technology</div><h4>Sovereign Technology</h4><p>We build and own the digital infrastructure our communities depend on. When technology is controlled by aligned, community-owned organizations rather than extractive corporations, it becomes a pillar of resilience rather than a vulnerability. This is the philosophy behind ProsperApps.</p></div>
+      <div class="pillar"><div class="pillar-n">03 / Economic Liberation</div><h4>Economic Liberation</h4><p>We train and support people to break free from the "payroll-to-payroll rat race" and develop self-employment skills, multiple income streams, and true economic sovereignty, so they can weather any storm.</p></div>
     </div>
     <div class="m-block" style="margin-top:3rem;">
       <h3>Our approach is practical, not idealistic.</h3>
@@ -626,7 +630,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
 <div class="page" id="page-technology">
   <div class="page-hero">
     <div class="page-hero-inner">
-      <div class="eyebrow">Technology</div>
+      <div class="eyebrow">Sovereign Technology</div>
       <h1 class="page-h1">We refused to build on<br><em>someone else's extraction machine.</em></h1>
       <p class="page-lede">ProsperApps is our foundation-aligned software company, building the sovereign digital infrastructure our communities need. Not because it was easy. Because it was necessary.</p>
     </div>
@@ -1157,7 +1161,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       <div class="prose">
         <p>The prevailing model tells people to get a good job, stay loyal, and hope the payroll keeps coming. For generations, that worked well enough. It no longer does.</p>
         <p>We believe <strong>economic sovereignty is a prerequisite for human dignity.</strong> When your income depends entirely on a single employer or a single platform, you are not free. You are compliant. And compliance under economic pressure is one of the most powerful forces keeping communities fragile.</p>
-        <p>Economic Liberation is the second pillar of Prosper Foundation's work because no community can be truly resilient when its members are economically trapped.</p>
+        <p>Economic Liberation is the third pillar of Prosper Foundation's work because no community can be truly resilient when its members are economically trapped.</p>
       </div>
     </div>
 
@@ -1171,13 +1175,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
         </div>
         <div class="card" style="border-top:3px solid var(--gold);">
           <span class="card-label">Pillar 02</span>
-          <h4>Economic Liberation</h4>
-          <p>The outcome when the other two pillars work together. Community creates the relationships. Technology removes the extractive middlemen. Economic liberation is what happens when people have both: a community of mutual support and tools that do not take a cut of their livelihood.</p>
+          <h4>Sovereign Technology</h4>
+          <p>ProsperApps was not built only for privacy. Every app in the ecosystem is designed to help practitioners, cooperatives, and small operators run their livelihoods without depending on platforms that extract from them. ProsperPay keeps more money with the worker. ProsperCalendar replaces a booking platform that takes a cut. Sovereign technology is economic liberation infrastructure.</p>
         </div>
         <div class="card" style="border-top:3px solid var(--gold);">
           <span class="card-label">Pillar 03</span>
-          <h4>Sovereign Technology</h4>
-          <p>ProsperApps was not built only for privacy. Every app in the ecosystem is designed to help practitioners, cooperatives, and small operators run their livelihoods without depending on platforms that extract from them. ProsperPay keeps more money with the worker. ProsperCalendar replaces a booking platform that takes a cut. Sovereign technology is economic liberation infrastructure.</p>
+          <h4>Economic Liberation</h4>
+          <p>The outcome when the other two pillars work together. Community creates the relationships. Technology removes the extractive middlemen. Economic liberation is what happens when people have both: a community of mutual support and tools that do not take a cut of their livelihood.</p>
         </div>
       </div>
     </div>
@@ -1574,7 +1578,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Technology</h5>
+      <h5>Sovereign Tech</h5>
       <ul>
         <li><a onclick="show('technology')">Why We Built Our Own Stack</a></li>
         <li><a href="https://alpha.prosper-apps.com" target="_blank">ProsperApps ↗</a></li>
@@ -1605,7 +1609,7 @@ function show(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => a.classList.remove('active'));
   const page = document.getElementById('page-' + id);
-  if (page) { page.classList.add('active'); window.scrollTo(0, 0); page.setAttribute('tabindex','-1'); page.focus(); }
+  if (page) { page.classList.add('active'); window.scrollTo({top: 0, behavior: 'instant'}); page.setAttribute('tabindex','-1'); page.focus(); }
   const nav = document.getElementById('n-' + id);
   if (nav) nav.classList.add('active');
   const mnav = document.getElementById('mn-' + id);
