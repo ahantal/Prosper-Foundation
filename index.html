@@ -148,6 +148,17 @@ h3.sub{font-family:var(--serif);font-size:1.4rem;color:var(--white);font-weight:
 .drive-pillar h5{font-family:var(--serif);font-size:1.05rem;color:var(--white);font-weight:400;margin-bottom:.45rem;}
 .drive-pillar p{color:var(--muted);font-size:.85rem;line-height:1.62;font-weight:300;}
 
+/* ── HEALERS HERO BLOCK ── */
+.healers-hero{background:linear-gradient(135deg,var(--bg2) 0%,#12100a 100%);border:1px solid var(--border);border-top:3px solid var(--gold);padding:4rem 3rem;margin:3rem 0;position:relative;overflow:hidden;}
+.healers-hero::after{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(201,180,110,.06) 0%,transparent 70%);border-radius:50%;}
+.healers-hero h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);color:var(--white);line-height:1.1;margin-bottom:1.1rem;font-weight:400;}
+.healers-hero h2 em{font-style:italic;color:var(--gold);}
+.healers-hero p{color:var(--muted);max-width:560px;font-weight:300;line-height:1.75;margin-bottom:1.75rem;}
+.healers-pillars{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;margin-top:2rem;}
+.healers-pillar{background:rgba(201,180,110,.04);border:1px solid var(--border);padding:1.25rem 1.5rem;}
+.healers-pillar h5{font-family:var(--serif);font-size:1rem;color:var(--white);font-weight:400;margin-bottom:.4rem;}
+.healers-pillar p{color:var(--muted);font-size:.82rem;line-height:1.6;font-weight:300;}
+
 /* ── PRIVACY STACK ── */
 .privacy-stack{display:flex;flex-direction:column;gap:1px;margin:2rem 0;}
 .ps-row{display:flex;align-items:flex-start;gap:1.5rem;background:var(--bg2);border:1px solid var(--border);padding:1.5rem 1.75rem;transition:background .18s;}
@@ -273,6 +284,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
     <li><a onclick="show('community-revival')" id="n-community-revival">Community Revival</a></li>
     <li><a onclick="show('what-we-do')" id="n-what-we-do">What We Do</a></li>
     <li><a onclick="show('technology')" id="n-technology">Technology</a></li>
+    <li><a onclick="show('healers')" id="n-healers">For Healers</a></li>
     <li><a onclick="show('prosper-drive')" id="n-prosper-drive">Prosper Drive</a></li>
     <li><a onclick="show('initiatives')" id="n-initiatives">Initiatives</a></li>
     <li><a onclick="show('declaration')" id="n-declaration">Declaration</a></li>
@@ -293,7 +305,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
     <div class="hero-actions">
       <button class="btn btn-gold" onclick="show('get-involved')">Get Involved →</button>
       <button class="btn btn-ghost" onclick="show('technology')">Our Technology →</button>
-      <button class="btn btn-drive" onclick="show('prosper-drive')">Prosper Drive →</button>
+      <button class="btn btn-gold" onclick="show('healers')" style="background:transparent;border:1px solid var(--gold);color:var(--gold);">For Healers →</button>
     </div>
   </div>
 
@@ -349,15 +361,39 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
 
   <div class="divider"></div>
 
-  <!-- PROSPER DRIVE TEASER -->
+  <!-- INITIATIVES TEASERS -->
   <div class="section">
-    <div class="drive-hero">
+    <div class="sec-label">Our Initiatives</div>
+
+    <!-- Initiative 1: Healers Platform -->
+    <div class="healers-hero">
       <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap;">
-        <span class="badge badge-drive">Launching Now</span>
-        <span class="badge badge-gold">First Initiative</span>
+        <span class="badge badge-gold">Initiative 01 · Launching Now</span>
+        <span class="badge" style="background:rgba(201,180,110,.07);color:var(--gold-dim);border-color:var(--gold-bdr);">Platform for Healers</span>
       </div>
-      <h2>Introducing <em>Prosper Drive.</em></h2>
-      <p>The first worker-owned ride-hailing cooperative built on the "For Human by Human" principle. A direct answer to Uber and Lyft—where drivers own the platform, keep more of what they earn, and communities stay in control.</p>
+      <h2>Prosper Platform <em>for Healers.</em></h2>
+      <p>A complete SaaS bundle for breathwork practitioners, yoga instructors, sound bath facilitators, energy healers, and retreat organizers — purpose-built so they own their practice, their data, and their community. No extraction. No lock-in.</p>
+      <div class="healers-pillars">
+        <div class="healers-pillar"><h5>ProsperCalendar</h5><p>Bookings, scheduling, recurring classes</p></div>
+        <div class="healers-pillar"><h5>ProsperEvents</h5><p>Retreats, workshops, QR ticketing</p></div>
+        <div class="healers-pillar"><h5>ProsperMeet</h5><p>Virtual sessions and online circles</p></div>
+        <div class="healers-pillar"><h5>ProsperMail</h5><p>Community email, your domain</p></div>
+        <div class="healers-pillar"><h5>ProsperCloudFiles</h5><p>Recordings, materials, secure storage</p></div>
+      </div>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a onclick="show('healers')" class="btn btn-gold">Explore the Platform →</a>
+        <a onclick="show('get-involved')" class="btn btn-ghost">Join Early Access</a>
+      </div>
+    </div>
+
+    <!-- Initiative 2: Prosper Drive -->
+    <div class="drive-hero" style="margin-top:1px;">
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+        <span class="badge badge-drive">Initiative 02 · Launching Now</span>
+        <span class="badge badge-green">Worker Owned</span>
+      </div>
+      <h2>Prosper <em>Drive.</em></h2>
+      <p>The first worker-owned ride-hailing cooperative built on the "For Human by Human" principle. A direct answer to Uber and Lyft — where drivers own the platform, keep more of what they earn, and communities stay in control.</p>
       <div class="drive-stats">
         <div class="drive-stat"><h5>~5M</h5><p>US driving jobs at risk from automation by 2030</p></div>
         <div class="drive-stat"><h5>0%</h5><p>Ownership drivers hold in current gig platforms</p></div>
@@ -651,13 +687,117 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════ HEALERS PLATFORM -->
+<div class="page" id="page-healers">
+  <div class="page-hero" style="border-top:3px solid var(--gold);">
+    <div class="page-hero-inner">
+      <div class="eyebrow" style="color:var(--gold);">
+        <span style="display:inline-block;width:22px;height:1px;background:var(--gold);"></span>
+        First Initiative · Platform for Healers
+      </div>
+      <h1 class="page-h1">Prosper Platform for Healers.<br><em>Your practice, fully owned by you.</em></h1>
+      <p class="page-lede">A complete SaaS bundle for breathwork practitioners, yoga instructors, sound bath facilitators, energy healers, and retreat organizers. Your data. Your community. Your terms.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem;">
+        <span class="badge badge-gold">Launching Now</span>
+        <span class="badge badge-gold">For Human By Human</span>
+        <span class="badge badge-green">Data Sovereign</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">Why Prosper Platform for Healers Exists</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:4rem;">
+      <div>
+        <h2 class="dsp">The tools healers use were never <em>built for them.</em></h2>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-top:2rem;">
+          <div><h5 style="font-family:var(--serif);font-size:2.2rem;color:var(--gold);font-weight:400;line-height:1;">5+</h5><p style="font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.35rem;">Platforms a typical healer juggles</p></div>
+          <div><h5 style="font-family:var(--serif);font-size:2.2rem;color:var(--gold);font-weight:400;line-height:1;">0%</h5><p style="font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.35rem;">Data ownership in typical SaaS tools</p></div>
+          <div><h5 style="font-family:var(--serif);font-size:2.2rem;color:var(--gold);font-weight:400;line-height:1;">100%</h5><p style="font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.35rem;">Yours. Always. By design.</p></div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>Healers of every modality — breathwork, sound bath, yoga, energy healing, retreat facilitation — are being forced to stitch together five or more unrelated platforms to run their practice. Booking tools that take a cut. Email platforms that sell their list. Video tools that harvest their community data.</p>
+        <p>None of these tools were built with the healer's values in mind. They were built to extract — from the practitioner and from the people they serve.</p>
+        <p><strong>Prosper Platform for Healers is the "For Human by Human" answer.</strong> A complete, integrated suite of apps that puts practitioners in full ownership of their practice, their data, and their client relationships.</p>
+      </div>
+    </div>
+
+    <div class="m-block">
+      <h3>The "For Human by Human" Healer Platform</h3>
+      <p class="prose">We believe a platform built for healing should itself be built with integrity. Not a marketplace that competes with you. Not a tool that monetises your community. A sovereign infrastructure you can trust with the most sensitive work you do — because you own it, not us.</p>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">Who It's For</div>
+      <div class="healers-pillars">
+        <div class="healers-pillar"><h5>🌬️ Breathwork Practitioners</h5><p>Facilitate sessions, host online circles, sell workshop passes</p></div>
+        <div class="healers-pillar"><h5>🔔 Sound Bath Facilitators</h5><p>Publish events, manage attendance, stream immersive sessions</p></div>
+        <div class="healers-pillar"><h5>🧘 Yoga Instructors</h5><p>Schedule classes, manage recurring bookings, build your community</p></div>
+        <div class="healers-pillar"><h5>⚡ Energy Healers</h5><p>Run 1:1 sessions virtually, share resources securely with clients</p></div>
+        <div class="healers-pillar"><h5>🌿 Retreat Organizers</h5><p>Multi-day retreats, ticketing, QR check-in, capacity management</p></div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">The App Suite — One Membership, Every Tool You Need</div>
+      <div class="grid-3" style="margin-top:0;">
+        <div class="card"><span class="card-label">Core · Scheduling</span><h4>ProsperCalendar</h4><p>Set availability, accept bookings, manage recurring classes, and send automated reminders — built for practitioners, not generic business users.</p></div>
+        <div class="card"><span class="card-label">Core · Events</span><h4>ProsperEvents</h4><p>Publish retreats and workshops, sell tickets, manage capacity, and issue QR entry passes — without paying a third-party ticketing platform.</p></div>
+        <div class="card"><span class="card-label">Core · Video</span><h4>ProsperMeet</h4><p>Host online healing sessions, breathwork circles, and group classes in small-room video meetings with persistent chat and host-admit controls.</p></div>
+        <div class="card"><span class="card-label">Core · Communications</span><h4>ProsperMail</h4><p>Stay in touch with your clients and community. Your email, your list — delivered from your own domain, never sold to advertisers.</p></div>
+        <div class="card"><span class="card-label">Suite · Storage</span><h4>ProsperCloudFiles</h4><p>Store session recordings, guided meditations, intake forms, and client materials. Portable, private, and always yours to export.</p></div>
+        <div class="card"><span class="card-label">Suite · Website</span><h4>Prosper Content Sites</h4><p>Your public-facing presence — your story, offerings, and events. A first-party site that belongs to you, with no third-party dependency.</p></div>
+      </div>
+      <div class="grid-2" style="margin-top:1px;">
+        <div class="card"><span class="card-label">Identity</span><h4>ProsperAuth + ProsperID</h4><p>Secure sign-in, passkeys, session management, and a verified healer identity — the foundation that everything else builds on.</p></div>
+        <div class="card"><span class="card-label">Suite · Creative</span><h4>Prosper Creative Suite</h4><p>Create promotional graphics, event visuals, and social content for your practice — without surrendering your creative assets to Adobe.</p></div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">Four Commitments to Every Healer</div>
+      <div class="grid-2" style="margin-top:0;">
+        <div class="card"><span class="card-label">01</span><h4>You own your data</h4><p>Every client list, recording, and piece of content belongs to you. Export everything, at any time, in open formats. No hostage-taking.</p></div>
+        <div class="card"><span class="card-label">02</span><h4>No extraction logic</h4><p>We are a foundation, not a venture-backed company. We charge for the platform. We don't sell your data or take a cut of your bookings.</p></div>
+        <div class="card"><span class="card-label">03</span><h4>Open membership</h4><p>Any healer, any modality, any tradition. Not gatekept by certification bodies or commercial partners. If you hold space for healing, you belong here.</p></div>
+        <div class="card"><span class="card-label">04</span><h4>Privacy by design</h4><p>Your clients trust you with sensitive moments. Portability and privacy are operating constraints enforced by our Declaration — not just marketing claims.</p></div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="sec-label">Built on ProsperApps Infrastructure</div>
+      <div class="m-block green">
+        <h3>Why sovereign infrastructure makes this possible.</h3>
+        <p class="prose">Prosper Platform for Healers doesn't run on Google Cloud, AWS, or Stripe's standard APIs. It runs on ProsperApps — our own identity, storage, mail, calendar, events, and video infrastructure. <strong>This is why we invested in building ProsperApps first.</strong> When your booking, communication, and session tools all share the same sovereign backbone, everything is coherent, everything is private, and nothing is siloed. The platform earns trust not by asking for it — but by being structurally incapable of betraying it.</p>
+      </div>
+      <div class="grid-3" style="margin-top:2rem;">
+        <div class="card"><span class="card-label">Scheduling & Events</span><h4>ProsperCalendar + ProsperEvents</h4><p>Calendar, bookings, public event discovery, QR ticketing, and capacity management — on infrastructure you control.</p></div>
+        <div class="card"><span class="card-label">Identity</span><h4>ProsperAuth + ProsperID</h4><p>Healer and client authentication with passkeys, session governance, and first-party identifiers. No Google login required.</p></div>
+        <div class="card"><span class="card-label">Communications</span><h4>ProsperMail + ProsperMeet</h4><p>Privacy-first mail delivery and small-room video meetings — the two channels healers depend on most, owned by us not Big Tech.</p></div>
+      </div>
+    </div>
+
+    <div class="cta-strip" style="margin-top:4rem;border-top-color:var(--gold);">
+      <div>
+        <h3>Healers. Practitioners. Community builders.<br>This is your platform.</h3>
+        <p>Join early to shape the platform, receive founding member pricing, and be part of the community that builds this from the ground up.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.75rem;">
+        <button class="btn btn-gold" onclick="show('get-involved')">Join Early Access →</button>
+        <button class="btn btn-ghost btn-sm" onclick="show('initiatives')">See All Initiatives →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════ PROSPER DRIVE -->
 <div class="page" id="page-prosper-drive">
   <div class="page-hero" style="border-top:3px solid var(--drive);">
     <div class="page-hero-inner">
       <div class="eyebrow" style="color:var(--drive);">
         <span style="display:inline-block;width:22px;height:1px;background:var(--drive);"></span>
-        First Initiative · Coop-Tech Platform
+        Second Initiative · Coop-Tech Platform
       </div>
       <h1 class="page-h1" style="color:var(--white);">Prosper Drive.<br><em style="color:var(--drive);">Ride-hailing, reimagined.</em></h1>
       <p class="page-lede">The world's first worker-owned ride-hailing cooperative. Built on the "For Human by Human" principle — where drivers own the platform, keep more of what they earn, and the community stays in control.</p>
@@ -767,7 +907,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
     <div class="page-hero-inner">
       <div class="eyebrow">Initiatives</div>
       <h1 class="page-h1">Building from the <em>ground up.</em></h1>
-      <p class="page-lede">Prosper Foundation is in its foundational phase — establishing frameworks, recruiting co-founders, and launching the first initiatives. Prosper Drive is the first out of the gate.</p>
+      <p class="page-lede">Prosper Foundation is in its foundational phase — establishing frameworks, recruiting co-founders, and launching two active initiatives: Prosper Platform for Healers and Prosper Drive.</p>
     </div>
   </div>
   <div class="section">
@@ -780,11 +920,22 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
       </div>
     </div>
 
-    <div class="sec-label">Active Initiative</div>
-    <div class="drive-hero" style="margin-top:0;">
-      <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-drive">Launching Now</span><span class="badge badge-green">First Initiative</span></div>
-      <h2>Prosper Drive</h2>
-      <p>Worker-owned ride-hailing cooperative. The first "For Human by Human" alternative to Uber and Lyft — where drivers own the platform, communities keep the wealth, and no one is just a metric.</p>
+    <div class="sec-label">Active Initiatives</div>
+
+    <div class="healers-hero" style="margin-top:0;">
+      <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-gold">Initiative 01 · Launching Now</span></div>
+      <h2>Prosper Platform <em>for Healers</em></h2>
+      <p>A purpose-built SaaS bundle for breathwork practitioners, yoga instructors, sound bath facilitators, energy healers, and retreat organizers. Own your practice. Own your data. No extraction, no lock-in.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a onclick="show('healers')" class="btn btn-gold">Explore the Platform →</a>
+        <a onclick="show('get-involved')" class="btn btn-ghost btn-sm">Join Early Access</a>
+      </div>
+    </div>
+
+    <div class="drive-hero" style="margin-top:1px;">
+      <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;"><span class="badge badge-drive">Initiative 02 · Launching Now</span><span class="badge badge-green">Worker Owned</span></div>
+      <h2>Prosper <em>Drive</em></h2>
+      <p>Worker-owned ride-hailing cooperative. The "For Human by Human" alternative to Uber and Lyft — where drivers own the platform, communities keep the wealth, and no one is just a metric.</p>
       <button class="btn btn-drive" onclick="show('prosper-drive')">Full Prosper Drive story →</button>
     </div>
 
@@ -1107,6 +1258,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
     <div class="footer-col">
       <h5>Initiatives</h5>
       <ul>
+        <li><a onclick="show('healers')">For Healers</a></li>
         <li><a onclick="show('prosper-drive')">Prosper Drive</a></li>
         <li><a onclick="show('initiatives')">All Initiatives</a></li>
         <li><a href="https://alpha.prosper-apps.com/declaration" target="_blank">The Declaration ↗</a></li>
@@ -1127,7 +1279,14 @@ function show(id) {
   if (page) { page.classList.add('active'); window.scrollTo(0, 0); page.setAttribute('tabindex','-1'); page.focus(); }
   const nav = document.getElementById('n-' + id);
   if (nav) nav.classList.add('active');
+  history.replaceState(null, '', '#' + id);
 }
+
+// Deep-link support: honour #hash on load
+(function() {
+  const hash = location.hash.replace('#', '');
+  if (hash && document.getElementById('page-' + hash)) show(hash);
+})();
 </script>
 </body>
 </html>
