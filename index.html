@@ -249,17 +249,66 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
 .page.active .home-hero .hero-lede{animation:fadeUp .55s ease both .2s;}
 .page.active .home-hero .hero-actions{animation:fadeUp .55s ease both .28s;}
 
+/* ── MOBILE NAV ── */
+.nav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem;margin-left:.5rem;}
+.nav-ham span{display:block;width:22px;height:2px;background:var(--muted);border-radius:1px;transition:all .25s;}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-ham.open span:nth-child(2){opacity:0;}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;position:fixed;top:62px;left:0;right:0;z-index:199;background:rgba(12,13,13,0.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem 0;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-size:.9rem;font-weight:500;color:var(--muted);text-decoration:none;padding:.85rem 2rem;border-bottom:1px solid var(--border);letter-spacing:.02em;cursor:pointer;transition:color .15s,background .15s;}
+.mobile-nav a:last-child{border-bottom:none;}
+.mobile-nav a:hover,.mobile-nav a.active{color:var(--text);background:var(--bg3);}
+.mobile-nav .mob-cta{background:var(--gold);color:var(--bg);font-weight:600;margin:1rem 2rem;border-radius:var(--r);text-align:center;border:none;}
+
+/* ── RESPONSIVE ── */
 @media(max-width:900px){
   .nav-links{display:none;}
+  .nav-ham{display:flex;}
   .values-grid{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr 1fr;}
   .founder-card{flex-direction:column;}
   .grid-2{grid-template-columns:1fr;}
   .drive-stats{gap:1.5rem;}
 }
-@media(max-width:600px){
-  .footer-inner{grid-template-columns:1fr;}
+
+@media(max-width:700px){
+  nav{padding:0 1.25rem;}
+  .section{padding:3rem 1.25rem;}
+  .section-tight{padding:2.5rem 1.25rem;}
+  .page-hero{padding:3rem 1.25rem 2.5rem;}
+  .home-hero{padding:3.5rem 1.25rem 3rem;min-height:auto;padding-top:calc(62px + 2.5rem);}
+  .home-hero h1{font-size:clamp(2.4rem,10vw,3.5rem);margin-bottom:1.25rem;}
+  .hero-lede{font-size:1rem;margin-bottom:2rem;}
+  .hero-actions{flex-direction:column;align-items:stretch;}
+  .hero-actions .btn{text-align:center;justify-content:center;}
+  .drive-hero,.healers-hero{padding:2rem 1.25rem;margin:1.5rem 0;}
+  .drive-stats{flex-direction:column;gap:1.25rem;}
+  .drive-pillars,.healers-pillars{grid-template-columns:1fr 1fr;}
+  .grid-3{grid-template-columns:1fr;}
+  .m-block{padding:1.5rem 1.5rem 1.5rem 1.75rem;margin:2rem 0;}
+  .cta-strip{flex-direction:column;align-items:flex-start;padding:2rem 1.25rem;}
+  .cta-strip h3{font-size:1.3rem;}
+  .cta-strip > div:last-child{width:100%;display:flex;flex-direction:column;gap:.6rem;}
+  .cta-strip .btn{text-align:center;justify-content:center;}
+  .eco-strip{padding:.75rem 1.25rem;}
+  .product-row{flex-direction:column;gap:1rem;}
+  .tier-head{flex-wrap:wrap;padding:1.25rem;}
+  .tier-body{padding:1.25rem;}
+  footer{padding:2.5rem 1.25rem 1.5rem;}
+  .footer-inner{grid-template-columns:1fr;gap:2rem;}
+  .footer-bottom{flex-direction:column;text-align:center;gap:.35rem;}
+  .privacy-stack .ps-row{flex-direction:column;gap:.75rem;padding:1.25rem;}
+  .founder-card{padding:1.5rem;gap:1.25rem;}
+}
+
+@media(max-width:480px){
+  .drive-pillars,.healers-pillars{grid-template-columns:1fr;}
+  .home-hero h1{font-size:clamp(2rem,9vw,2.8rem);}
+  .page-h1{font-size:clamp(1.8rem,7vw,2.4rem);}
   .tier-body .grid-inner{grid-template-columns:1fr!important;}
+  .badge{font-size:.52rem;padding:.18rem .5rem;}
 }
 </style>
 </head>
@@ -281,19 +330,29 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
   </a>
   <ul class="nav-links">
     <li><a onclick="show('mission')" id="n-mission">Mission</a></li>
-    <li><a onclick="show('community-revival')" id="n-community-revival">Community Revival</a></li>
-    <li><a onclick="show('what-we-do')" id="n-what-we-do">What We Do</a></li>
-    <li><a onclick="show('technology')" id="n-technology">Technology</a></li>
     <li><a onclick="show('healers')" id="n-healers">For Healers</a></li>
     <li><a onclick="show('prosper-drive')" id="n-prosper-drive">Prosper Drive</a></li>
-    <li><a onclick="show('initiatives')" id="n-initiatives">Initiatives</a></li>
     <li><a onclick="show('declaration')" id="n-declaration">Declaration</a></li>
     <li><a onclick="show('founders')" id="n-founders">Founders</a></li>
     <li><a onclick="show('get-involved')" id="n-get-involved">Get Involved</a></li>
-    <li><a onclick="show('privacy')" id="n-privacy">Privacy Policy</a></li>
     <li><a class="nav-cta" onclick="show('get-involved')">Join Us →</a></li>
   </ul>
+  <button class="nav-ham" id="nav-ham" onclick="toggleMobileNav()" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <a onclick="show('mission');closeMobileNav()" id="mn-mission">Mission</a>
+  <a onclick="show('healers');closeMobileNav()" id="mn-healers">For Healers</a>
+  <a onclick="show('prosper-drive');closeMobileNav()" id="mn-prosper-drive">Prosper Drive</a>
+  <a onclick="show('declaration');closeMobileNav()" id="mn-declaration">Declaration</a>
+  <a onclick="show('founders');closeMobileNav()" id="mn-founders">Founders</a>
+  <a onclick="show('get-involved');closeMobileNav()" id="mn-get-involved">Get Involved</a>
+  <a onclick="show('privacy');closeMobileNav()" id="mn-privacy">Privacy Policy</a>
+  <a class="mob-cta" onclick="show('get-involved');closeMobileNav()">Join Us →</a>
+</div>
 
 <!-- ═══════════════════════════════════════════ HOME -->
 <div class="page active" id="page-home">
@@ -1274,13 +1333,40 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2
 <script>
 function show(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => a.classList.remove('active'));
   const page = document.getElementById('page-' + id);
   if (page) { page.classList.add('active'); window.scrollTo(0, 0); page.setAttribute('tabindex','-1'); page.focus(); }
   const nav = document.getElementById('n-' + id);
   if (nav) nav.classList.add('active');
+  const mnav = document.getElementById('mn-' + id);
+  if (mnav) mnav.classList.add('active');
   history.replaceState(null, '', '#' + id);
 }
+
+function toggleMobileNav() {
+  const menu = document.getElementById('mobile-nav');
+  const btn = document.getElementById('nav-ham');
+  const open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+}
+
+function closeMobileNav() {
+  const menu = document.getElementById('mobile-nav');
+  const btn = document.getElementById('nav-ham');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', false);
+}
+
+// Close mobile nav on outside click
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('mobile-nav');
+  const btn = document.getElementById('nav-ham');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMobileNav();
+  }
+});
 
 // Deep-link support: honour #hash on load
 (function() {
